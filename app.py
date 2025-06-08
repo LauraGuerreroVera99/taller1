@@ -1,3 +1,4 @@
+
 import dash
 from dash import dcc
 from dash import html
@@ -22,8 +23,8 @@ app.config.suppress_callback_exceptions = True
 # Load data from csv
 def load_data():
     df = pd.read_csv("datos_energia.csv")
-    df["fecha"] = pd.to_datetime(df["fecha"])  # Asegura que la columna 'fecha' esté en formato datetime
-    df.set_index("fecha", inplace=True)
+    df["time"] = pd.to_datetime(df["time"])  # Asegura que la columna 'fecha' esté en formato datetime
+    df.set_index("time", inplace=True)
     return df
    
 
